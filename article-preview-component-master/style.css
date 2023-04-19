@@ -1,205 +1,178 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Manrope:wght@500;700&display=swap');
-*{
+* {
+  font-family: 'Manrope', sans-serif;
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
+}
+html {
+  min-width: 375px;
+  max-width: 1440px;
+  margin: auto;
 }
 body {
-  background-color: hsl(210, 46%, 95%);
+  width: 90%;
+  min-height: 100vh;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  font-size: 13px;
-  font-family: 'Manrope', sans-serif;
+  background-color: hsl(210, 46%, 95%);
 }
-
-.body {
-  width: 50%;
-  display: flex;
-  line-height: 20px;
+.card {
+  margin: 3em 0px; /* ??? */
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
-  background-color: white;
+  box-shadow: 0em 0.5em 0.5em rgba(0, 0, 0, .118);
+  position: relative;
+  width: 340px;
+}
+.cover img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+.desc {
+  padding: 2em 2em 1em 2em;
+}
+h1 {
+  font-size: 1.05em;
+  font-weight: 700;
+  color: hsl(214, 17%, 51%);
+}
+p {
+  font-size: .9em;
+  font-weight: 500;
+  line-height: 1.5em;
+  padding: 1em 0;
+  color: hsl(214, 17%, 51%);
 }
 
-.body img {
-  border-radius: 10px 0px 0px 10px;
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  margin-top: 1em;
 }
-
-.text {
+.profile-img {
+  width: 35px;
+  border-radius: 50px;
+  margin-right: 1em;
+}
+h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 5%;
-  position: relative;
-}
-
-.text .heading {
+  align-items: flex-start;
+  font-size: 0.8em;
   font-weight: 700;
-  margin-bottom: 5%;
-  font-size: 19px;
+  color: hsl(217, 19%, 35%);
+  flex: 1;
 }
 
-.text .subText {
-  font-size: 14px;
-  margin: 3%;
+span {
+  color: hsl(214, 17%, 51%);
+  font-weight: 500;
 }
-
-.person p + p {
-  color: hsl(212, 23%, 69%);
-}
-
-.text .person {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  justify-content: space-between;
-  margin-top: 5%;
-}
-
-.text .person .images {
-  display: flex;
-  width: 28%;
-  justify-content: space-between;
-}
-
-.text .person .images img {
-  border-radius: 100px;
-}
-
-.person #button {
-  background-color: hsl(210, 46%, 95%);
-  border-radius: 50px;
-  padding: 8px;
-  margin-right: 4%;
-  display: inline-block;
-  text-decoration: none;
-  cursor: pointer;
-  outline: none;
-  color: white;
+button {
   border: none;
+  padding: 0.5em;
+  border-radius: 50px;
+  background-color: hsl(210, 46%, 95%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  object-fit: contain;
+  cursor: pointer;
 }
+
+/* .attribution {
+  margin-top: 3em;
+} */
+
+/* Active state */
 
 .share {
-  padding: 3%;
-  background-color: hsl(217, 46%, 41%);
-  color: hsl(212, 23%, 69%);
+  background-color: hsl(217, 19%, 35%);
   display: flex;
-  width: 40%;
+  flex-direction: row;
   align-items: center;
-  border-radius: 10px;
-  justify-content: space-around;
+  justify-content: start;
+  padding: 1.2rem 2rem;
+  border-radius: 0 0 10px 10px;
   position: absolute;
-  top: 50%;
-  left: 65%;
-  display: none;
+  width: 340px;
+  bottom: 0;
 }
 
-.share .shareSvg {
+.share p {
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  padding: 0;
+  margin-right: 1em;
+  color: hsl(210, 46%, 95% 0.529);
+}
+.icons {
   display: flex;
+  flex-direction: row;
+  justify-content: start;
   align-items: center;
-  width: 50%;
-  justify-content: space-evenly;
+  gap: 1em;
+  flex: 1;
 }
-
-.share .triangle {
-  width: 20px;
-  height: 20px;
-  background-color: hsl(217, 46%, 41%);
-  position: absolute;
-  top: 75%;
-  left: 35%;
-  transform: rotateY(0deg) rotate(45deg);
-}
-
-.person #buttonClose {
-  background-color: hsl(210, 46%, 95%);
-  border-radius: 50px;
-  padding: 8px;
-  margin-right: 4%;
-  display: inline-block;
-  text-decoration: none;
-  cursor: pointer;
-  outline: none;
-  color: white;
-  border: none;
+.active-state {
   display: none;
 }
-
-.share #buttonCloseOne {
-  display: none;
-}
-
-@media screen and (max-width: 376px) {
-  .body {
-    width: 85%;
+@media screen and (min-width: 992px) {
+  .card {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    margin-top: 0;
+    width: 800px;
+    height: 340px;
+  }
+  .cover img {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 300px;
+    height: 340px;
+    border-radius: 10px 0 0 10px;
+    object-fit: cover;
+    object-position: left;
   }
-
-  .body img {
-    width: 100%;
-    border-radius: 10px 10px 0px 0px;
+  .desc {
+    padding: 1.5em;
   }
-
-  .text {
-    margin-top: 5%;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  h1 {
+    font-size: 1.25em;
   }
-  .text .person .images img {
-    width: 30px;
-  }
-
-  .text .person .images {
-    width: 48%;
+  .profile {
+    margin-top: 0;
   }
   .share {
-    top: 75%;
-    left: 0;
-    width: 94%;
-    height: 49px;
-    border-radius: 0px 0px 10px 10px;
+    bottom: 4.5em;
+    right: -4.5em;
+    width: min-content;
+    border-radius: 10px;
+    box-shadow: 0em 0.5em 0.8em rgba(0, 0, 0, 0.138);
   }
-  .share .shareSvg {
-    width: 35%;
+  #share-btn-2 {
+    display: none;
+  }
+  .triangle {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-right: 15%;
-  }
-  .share #buttonCloseOne {
-    background-color: hsl(210, 46%, 95%);
-    border-radius: 50px;
-    padding: 8px;
-    margin-right: 4%;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
-    outline: none;
-    color: white;
-    border: none;
-    display: none;
-  }
-
-  .share .triangle {
-    display: none;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;   
+    border-top: 20px solid hsl(217, 19%, 35%);
+    position: absolute;
+    top: 3.7em;
+    left: 6.8em;
   }
 }
-
-/* font-family: 'Manrope', sans-serif; */
-
-
-
-
 
 
     /* <style>.attribution {

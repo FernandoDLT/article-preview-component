@@ -1,15 +1,15 @@
-document.getElementById("button").addEventListener('click', function(){
-  document.querySelector(".share").style.display = 'flex';
-  document.getElementById("buttonClose").style.display = 'inline-block';
-  document.getElementById("button").style.display = 'none';
+'use strict';
+
+const shareBtn = document.getElementById
+  ("share-btn");
+const active = document.getElementById("active");
+const shareBtn2 = document.getElementById
+  ("share-btn-2");
+
+shareBtn.addEventListener('click', () => {
+  active.classList.toggle('active-state');
 });
 
-function init() {
-  document.querySelector(".share").style.display = 'none';
-  document.getElementById("button").style.display = 'inline-block';
-  document.getElementById("buttonClose").style.display = 'none';
-};
-
-
-document.getElementById("buttonClose").addEventListener('click', init); 
-document.getElementById("buttonCloseOne").addEventListener('click', init); 
+shareBtn2.addEventListener('click', () => {
+  active.classList.toggle('active-state');
+});
